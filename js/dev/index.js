@@ -4869,3 +4869,41 @@ document.addEventListener("click", (e) => {
     spans[1].classList.toggle("hidden");
   }
 });
+document.addEventListener("click", (e) => {
+  const playBtn = e.target.closest(".item-team__play");
+  const videoWrap = e.target.closest(".item-team__video");
+  const videos = document.querySelectorAll(".item-team__video video");
+  if (playBtn) {
+    const video = playBtn.closest(".item-team__video").querySelector("video");
+    video.play();
+    hidePlay(playBtn);
+    return;
+  }
+  if (videoWrap) {
+    const video = videoWrap.querySelector("video");
+    const btn = videoWrap.querySelector(".item-team__play");
+    if (video.paused) {
+      video.play();
+      hidePlay(btn);
+    } else {
+      video.pause();
+      showPlay(btn);
+    }
+    return;
+  }
+  videos.forEach((video) => {
+    if (!video.paused) {
+      video.pause();
+      const btn = video.closest(".item-team__video").querySelector(".item-team__play");
+      showPlay(btn);
+    }
+  });
+});
+function hidePlay(btn) {
+  btn.style.opacity = "0";
+  btn.style.pointerEvents = "none";
+}
+function showPlay(btn) {
+  btn.style.opacity = "1";
+  btn.style.pointerEvents = "auto";
+}
