@@ -155,6 +155,15 @@ body {
 }
 
 .title {
+  opacity: 0;
+  transform: translate(0, 1.25rem);
+  transition: all 0.55s;
+}
+.title.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
+.title {
   position: relative;
   font-family: "Intro";
 }
@@ -500,6 +509,15 @@ body {
   text-align: center;
   color: #f5f3ef;
 }
+.hero__title {
+  transition: all 0.7s;
+  transform: translate(0, 1.875rem);
+  opacity: 0;
+}
+.hero__title.--watcher-view {
+  transform: translate(0);
+  opacity: 1;
+}
 .hero {
   /* .hero__text */
 }
@@ -511,10 +529,24 @@ body {
   text-align: center;
   color: #f5f3ef;
   max-width: 58.6875rem;
+  transition: all 0.7s 0.25s;
+  transform: translate(0, 1.25rem);
+  opacity: 0;
+}
+.hero__text.--watcher-view {
+  transform: translate(0);
+  opacity: 1;
 }
 .hero__button {
   padding: 0.75rem 1.5rem;
   margin-top: 3.75rem;
+  transition: all 1.1s 0.5s;
+  transform: translate(0, 1.875rem);
+  opacity: 0;
+}
+.hero__button.--watcher-view {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .benefits {
@@ -545,6 +577,15 @@ body {
 }
 .benefits {
   /* .benefits__item */
+}
+.item-benefit {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s;
+}
+.item-benefit.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
 }
 .item-benefit {
   display: flex;
@@ -611,6 +652,15 @@ body {
 }
 .timbildings {
   /* .timbildings__item */
+}
+.item-team {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s;
+}
+.item-team.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
 }
 .item-team {
   /* .item-team__video */
@@ -984,6 +1034,15 @@ body {
   /* .cta__text */
 }
 .cta__text {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s 0.2s;
+}
+.cta__text.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
+.cta__text {
   font-weight: 600;
 }
 .cta__text {
@@ -999,13 +1058,21 @@ body {
   /* .cta__button */
 }
 .cta__button {
+  opacity: 0;
+  transform: translate(0, 0.3125rem);
+  transition: transform 0.55s 0.4s, opacity 0.55s 0.4s, color 0.4s, background-color 0.4s;
+}
+.cta__button.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
+.cta__button {
   padding: 2.25rem 7.5rem;
 }
 .cta__button {
   font-family: "Intro";
   font-size: 1.25rem;
   color: #f5f3ef;
-  transition: all 0.4s;
 }
 .cta__button--2 {
   font-size: 1rem;
@@ -1137,6 +1204,15 @@ body {
   /* .partners__item */
 }
 .partners__item {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s;
+}
+.partners__item.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
+.partners__item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1198,11 +1274,29 @@ body {
   /* .works__button */
 }
 .works__button {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s 0.2s;
+}
+.works__button.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
+.works__button {
   margin-top: 3.75rem;
   justify-self: center;
   padding: 1.5rem 5rem;
 }
 
+.item-work {
+  opacity: 0;
+  transform: translate(0, 0.9375rem);
+  transition: all 0.5s;
+}
+.item-work.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
+}
 .item-work {
   padding: 0.75rem;
   padding-bottom: 1.5rem;
@@ -1319,6 +1413,15 @@ body {
 }
 .contacts {
   /* .contacts__item */
+}
+.item-contact {
+  opacity: 0;
+  transform: translate(0, 3.4375rem);
+  transition: all 0.5s;
+}
+.item-contact.--watcher-view {
+  opacity: 1;
+  transform: translate(0);
 }
 .item-contact {
   background-color: #fff;
