@@ -4419,9 +4419,9 @@ function initSliders() {
       spaceBetween: 0,
       //autoHeight: true,
       speed: 800,
+      centeredSlidesBounds: true,
       //touchRatio: 0,
       simulateTouch: true,
-      // loop: true,
       //preloadImages: false,
       lazy: true,
       /*
@@ -4485,7 +4485,7 @@ function headerScroll() {
   const header = document.querySelector("[data-fls-header-scroll]");
   const headerShow = header.hasAttribute("data-fls-header-scroll-show");
   const headerShowTimer = header.dataset.flsHeaderScrollShow ? header.dataset.flsHeaderScrollShow : 500;
-  const startPoint = header.dataset.flsHeaderScroll ? header.dataset.flsHeaderScroll : 1;
+  const startPoint = header.dataset.flsHeaderScroll ? header.dataset.flsHeaderScroll : 800;
   let scrollDirection = 0;
   let timer;
   document.addEventListener("scroll", function(e) {
@@ -4897,8 +4897,8 @@ document.addEventListener("click", (e) => {
   }
   const spans = btn.querySelectorAll("span");
   if (spans.length >= 2) {
-    spans[0].classList.toggle("hidden");
-    spans[1].classList.toggle("hidden");
+    spans[0].classList.toggle("_hidden");
+    spans[1].classList.toggle("_hidden");
   }
 });
 document.addEventListener("click", (e) => {
