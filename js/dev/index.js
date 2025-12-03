@@ -4897,8 +4897,8 @@ document.addEventListener("click", (e) => {
   }
   const spans = btn.querySelectorAll("span");
   if (spans.length >= 2) {
-    spans[0].classList.toggle("_hidden");
-    spans[1].classList.toggle("_hidden");
+    spans[0].classList.toggle("hidden");
+    spans[1].classList.toggle("hidden");
   }
 });
 document.addEventListener("click", (e) => {
