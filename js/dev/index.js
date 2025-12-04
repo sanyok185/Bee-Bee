@@ -4414,7 +4414,7 @@ function initSliders() {
       observer: true,
       initialSlide: 1,
       observeParents: true,
-      slidesPerView: auto,
+      slidesPerView: 2.5,
       centeredSlides: true,
       spaceBetween: 0,
       //autoHeight: true,
