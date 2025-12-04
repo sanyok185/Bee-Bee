@@ -805,8 +805,9 @@ body {
   flex: 0 1 50%;
   position: relative;
   display: flex;
+  padding-top: 4.5625rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .item-team {
   /* .item-team__summary */
@@ -2272,7 +2273,6 @@ body {
     padding-right: 4.375rem;
   }
   ._open .item-team__info {
-    padding-top: 5.9375rem;
     padding-bottom: 2rem;
   }
   .item-team__info {
