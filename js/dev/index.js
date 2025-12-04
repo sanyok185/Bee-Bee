@@ -4939,9 +4939,11 @@ document.addEventListener("click", (e) => {
       video.pause();
       video.currentTime = 0;
     }
-    item.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+    const itemTop = item.getBoundingClientRect().top + window.scrollY;
+    const offset = 100;
+    window.scrollTo({
+      top: itemTop - offset,
+      behavior: "smooth"
     });
   }
   const spans = btn.querySelectorAll("span");

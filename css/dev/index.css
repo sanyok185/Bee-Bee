@@ -1953,7 +1953,7 @@ body {
     gap: 0.5rem;
   }
   .item-team__slide {
-    height: 15rem;
+    height: 12.5rem;
   }
   .item-team__prev, .item-team__next {
     flex-basis: 2.5rem;
@@ -2139,7 +2139,7 @@ body {
     gap: clamp( 0.5rem , 0.1153846153875rem  +  1.5384615385vw , 1.5rem );
   }
   .item-team__slide {
-    height: clamp( 15rem , 11.39423076923125rem  +  14.4230769231vw , 24.375rem );
+    height: clamp( 12.5rem , 9.6875rem  +  11.25vw , 19.8125rem );
   }
   .item-team__prev, .item-team__next {
     flex-basis: clamp( 2.5rem , 2.1153846153875rem  +  1.5384615385vw , 3.5rem );
@@ -2341,7 +2341,7 @@ body {
     gap: 1.5rem;
   }
   .item-team__slide {
-    height: 24.375rem;
+    height: 19.8125rem;
   }
   .item-team__prev, .item-team__next {
     flex-basis: 3.5rem;
