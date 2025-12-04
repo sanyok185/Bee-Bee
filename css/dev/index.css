@@ -1013,7 +1013,7 @@ body {
   aspect-ratio: 1/1;
   border-radius: 50%;
   backdrop-filter: blur(1.5rem);
-  background: rgba(255, 255, 255, 0.32);
+  background: rgb(59, 103, 193);
   color: #fff;
   pointer-events: all;
   cursor: pointer;
