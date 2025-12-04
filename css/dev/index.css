@@ -971,7 +971,6 @@ body {
 }
 .item-team__slide {
   position: relative;
-  height: 31.4375rem;
 }
 .item-team__slide img {
   position: absolute;
@@ -1953,6 +1952,9 @@ body {
   .item-team__labels {
     gap: 0.5rem;
   }
+  .item-team__slide {
+    height: 15.625rem;
+  }
   .item-team__prev, .item-team__next {
     flex-basis: 2.5rem;
   }
@@ -2031,9 +2033,6 @@ body {
   .hero__title {
     margin-bottom: 1rem;
   }
-  .item-team__slide {
-    height: 25.125rem;
-  }
   .faq__title {
     margin-bottom: 2.875rem;
   }
@@ -2072,12 +2071,6 @@ body {
   }
   .faq__title {
     margin-bottom: clamp( 2.875rem , 2.5679824561375rem  +  1.5350877193vw , 3.75rem );
-  }
-}
-
-@media (width > 20em) and (width <= 25em){
-  .item-team__slide {
-    height: clamp( 25.125rem , -0.125rem  +  126.25vw , 31.4375rem );
   }
 }
 
@@ -2145,6 +2138,9 @@ body {
   .item-team__labels {
     gap: clamp( 0.5rem , 0.1153846153875rem  +  1.5384615385vw , 1.5rem );
   }
+  .item-team__slide {
+    height: clamp( 15.625rem , 11.97115384615625rem  +  14.6153846154vw , 25.125rem );
+  }
   .item-team__prev, .item-team__next {
     flex-basis: clamp( 2.5rem , 2.1153846153875rem  +  1.5384615385vw , 3.5rem );
   }
@@ -2192,12 +2188,6 @@ body {
   }
   .partners__items {
     gap: clamp( 0.75rem , -0.8167574931875rem  +  6.2670299728vw , 2.1875rem );
-  }
-}
-
-@media (width > 25em){
-  .item-team__slide {
-    height: 31.4375rem;
   }
 }
 
@@ -2349,6 +2339,9 @@ body {
   }
   .item-team__labels {
     gap: 1.5rem;
+  }
+  .item-team__slide {
+    height: 25.125rem;
   }
   .item-team__prev, .item-team__next {
     flex-basis: 3.5rem;
