@@ -4893,32 +4893,8 @@ document.addEventListener("click", (e) => {
   const btn = e.target.closest(".item-team__more");
   if (!btn) return;
   const item = btn.closest(".timbildings__item");
-  const allItems = document.querySelectorAll(".timbildings__item");
-  allItems.forEach((el) => {
-    if (el !== item && el.classList.contains("_open")) {
-      const otherVideo = el.querySelector(".item-team__video video");
-      if (otherVideo) {
-        otherVideo.pause();
-        otherVideo.currentTime = 0;
-      }
-      el.querySelectorAll("[data-was-hidden]").forEach((hiddenEl) => {
-        hiddenEl.classList.add("hidden");
-        hiddenEl.removeAttribute("data-was-hidden");
-      });
-      el.classList.remove("_open");
-      const btnEl = el.querySelector(".item-team__more");
-      if (btnEl) {
-        btnEl.classList.remove("_open");
-        const spans2 = btnEl.querySelectorAll("span");
-        if (spans2.length >= 2) {
-          spans2[0].classList.remove("hidden");
-          spans2[1].classList.add("hidden");
-        }
-      }
-    }
-  });
   const hiddenElems = item.querySelectorAll(".hidden, [data-was-hidden]");
-  const isOpen = btn.classList.toggle("_open");
+  const isOpen = !item.classList.contains("_open");
   const video = item.querySelector(".item-team__video video");
   if (isOpen) {
     hiddenElems.forEach((el) => {
@@ -4940,12 +4916,12 @@ document.addEventListener("click", (e) => {
       video.currentTime = 0;
     }
     const itemTop = item.getBoundingClientRect().top + window.scrollY;
-    const offset = 100;
     window.scrollTo({
-      top: itemTop - offset,
+      top: itemTop - 100,
       behavior: "smooth"
     });
   }
+  btn.classList.toggle("_open");
   const spans = btn.querySelectorAll("span");
   if (spans.length >= 2) {
     spans[0].classList.toggle("hidden");
