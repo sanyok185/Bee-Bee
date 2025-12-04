@@ -4915,24 +4915,32 @@ document.addEventListener("click", (e) => {
   if (!btn) return;
   const item = btn.closest(".timbildings__item");
   const allItems = document.querySelectorAll(".timbildings__item");
-  document.querySelectorAll(".item-team__video video");
   allItems.forEach((el) => {
     if (el !== item && el.classList.contains("_open")) {
+      const otherVideo = el.querySelector(".item-team__video video");
+      if (otherVideo) {
+        otherVideo.pause();
+        otherVideo.currentTime = 0;
+      }
       el.querySelectorAll("[data-was-hidden]").forEach((hiddenEl) => {
         hiddenEl.classList.add("hidden");
         hiddenEl.removeAttribute("data-was-hidden");
       });
       el.classList.remove("_open");
-      const v = el.querySelector(".item-team__video video");
-      if (v) {
-        v.pause();
-        v.currentTime = 0;
+      const btnEl = el.querySelector(".item-team__more");
+      if (btnEl) {
+        btnEl.classList.remove("_open");
+        const spans2 = btnEl.querySelectorAll("span");
+        if (spans2.length >= 2) {
+          spans2[0].classList.remove("hidden");
+          spans2[1].classList.add("hidden");
+        }
       }
     }
   });
   const hiddenElems = item.querySelectorAll(".hidden, [data-was-hidden]");
   const isOpen = btn.classList.toggle("_open");
-  const currentVideo = item.querySelector(".item-team__video video");
+  const video = item.querySelector(".item-team__video video");
   if (isOpen) {
     hiddenElems.forEach((el) => {
       if (el.classList.contains("hidden")) {
@@ -4941,18 +4949,16 @@ document.addEventListener("click", (e) => {
       }
     });
     item.classList.add("_open");
-    if (currentVideo) {
-      currentVideo.play();
-    }
+    if (video) video.play();
   } else {
-    hiddenElems.forEach((el) => {
+    item.querySelectorAll("[data-was-hidden]").forEach((el) => {
       el.classList.add("hidden");
       el.removeAttribute("data-was-hidden");
     });
     item.classList.remove("_open");
-    if (currentVideo) {
-      currentVideo.pause();
-      currentVideo.currentTime = 0;
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
     }
   }
   const spans = btn.querySelectorAll("span");
