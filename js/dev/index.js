@@ -4915,6 +4915,7 @@ document.addEventListener("click", (e) => {
   if (!btn) return;
   const item = btn.closest(".timbildings__item");
   const allItems = document.querySelectorAll(".timbildings__item");
+  document.querySelectorAll(".item-team__video video");
   allItems.forEach((el) => {
     if (el !== item && el.classList.contains("_open")) {
       el.querySelectorAll("[data-was-hidden]").forEach((hiddenEl) => {
@@ -4922,19 +4923,16 @@ document.addEventListener("click", (e) => {
         hiddenEl.removeAttribute("data-was-hidden");
       });
       el.classList.remove("_open");
-      const btnEl = el.querySelector(".item-team__more");
-      if (btnEl) {
-        btnEl.classList.remove("_open");
-        const spans2 = btnEl.querySelectorAll("span");
-        if (spans2.length >= 2) {
-          spans2[0].classList.remove("hidden");
-          spans2[1].classList.add("hidden");
-        }
+      const v = el.querySelector(".item-team__video video");
+      if (v) {
+        v.pause();
+        v.currentTime = 0;
       }
     }
   });
   const hiddenElems = item.querySelectorAll(".hidden, [data-was-hidden]");
   const isOpen = btn.classList.toggle("_open");
+  const currentVideo = item.querySelector(".item-team__video video");
   if (isOpen) {
     hiddenElems.forEach((el) => {
       if (el.classList.contains("hidden")) {
@@ -4943,12 +4941,19 @@ document.addEventListener("click", (e) => {
       }
     });
     item.classList.add("_open");
+    if (currentVideo) {
+      currentVideo.play();
+    }
   } else {
-    item.querySelectorAll("[data-was-hidden]").forEach((el) => {
+    hiddenElems.forEach((el) => {
       el.classList.add("hidden");
       el.removeAttribute("data-was-hidden");
     });
     item.classList.remove("_open");
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
   }
   const spans = btn.querySelectorAll("span");
   if (spans.length >= 2) {
@@ -4956,41 +4961,3 @@ document.addEventListener("click", (e) => {
     spans[1].classList.toggle("hidden");
   }
 });
-document.addEventListener("click", (e) => {
-  const playBtn = e.target.closest(".item-team__play");
-  const videoWrap = e.target.closest(".item-team__video");
-  const videos = document.querySelectorAll(".item-team__video video");
-  if (playBtn) {
-    const video = playBtn.closest(".item-team__video").querySelector("video");
-    video.play();
-    hidePlay(playBtn);
-    return;
-  }
-  if (videoWrap) {
-    const video = videoWrap.querySelector("video");
-    const btn = videoWrap.querySelector(".item-team__play");
-    if (video.paused) {
-      video.play();
-      hidePlay(btn);
-    } else {
-      video.pause();
-      showPlay(btn);
-    }
-    return;
-  }
-  videos.forEach((video) => {
-    if (!video.paused) {
-      video.pause();
-      const btn = video.closest(".item-team__video").querySelector(".item-team__play");
-      showPlay(btn);
-    }
-  });
-});
-function hidePlay(btn) {
-  btn.style.opacity = "0";
-  btn.style.pointerEvents = "none";
-}
-function showPlay(btn) {
-  btn.style.opacity = "1";
-  btn.style.pointerEvents = "auto";
-}
