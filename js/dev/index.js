@@ -4417,6 +4417,7 @@ function initSliders() {
       slidesPerView: 2.5,
       centeredSlides: true,
       spaceBetween: 0,
+      // loop: true,	
       //autoHeight: true,
       speed: 800,
       centeredSlidesBounds: true,
@@ -4424,28 +4425,6 @@ function initSliders() {
       simulateTouch: true,
       //preloadImages: false,
       lazy: true,
-      /*
-      // Ефекти
-      effect: 'fade',
-      autoplay: {
-      	delay: 3000,
-      	disableOnInteraction: false,
-      },
-      */
-      // Пагінація
-      /*
-      pagination: {
-      	el: '.swiper-pagination',
-      	clickable: true,
-      },
-      */
-      // Скроллбар
-      /*
-      scrollbar: {
-      	el: '.swiper-scrollbar',
-      	draggable: true,
-      },
-      */
       // Кнопки "вліво/вправо"
       navigation: {
         prevEl: ".item-team__prev",
